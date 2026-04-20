@@ -17,19 +17,16 @@ input_example = X_train[0:5]
 
 mlflow.set_experiment("mobile_price_classification")
 
-with mlflow.start_run(run_name="RandomForest_autolog"):
-    n_estimators = 1000
-    max_depth = 25
-    mlflow.sklearn.autolog()
+mlflow.sklearn.autolog()
 
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
-    mlflow.sklearn.log_model(
-        sk_model=model, artifact_path="model", input_example=input_example
-    )
-    model.fit(X_train, y_train)
+n_estimators = 1000
+max_depth = 25
 
-    y_pred = model.predict(X_test)
-    acc = accuracy_score(y_test, y_pred)
+model = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
 
-    accuracy = model.score(X_test, y_test)
-    mlflow.log_metric("accuracy", accuracy)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy = model.score(X_test, y_test)
+
+mlflow.log_metric("accuracy", accuracy)
