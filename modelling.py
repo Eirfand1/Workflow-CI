@@ -5,8 +5,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000/")
-
 df = pd.read_csv("mobile_price_preprocessing.csv")
 
 X = df.drop("price_range", axis=1)
