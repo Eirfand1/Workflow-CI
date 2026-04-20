@@ -34,13 +34,10 @@ jobs:
 
       - name: Upload Artifacts to GitHub
         run: |
-          cp -r MLProject/artifacts . 2>/dev/null || true
-          find . -name "mlruns" -maxdepth 2 -exec cp -r {} ./mlruns_ci \; 2>/dev/null || true
-
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add artifacts/ mlruns_ci/ 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "ci: update model artifacts and mlruns [skip ci]"
+          git add MLProject/mlruns/
+          git diff --staged --quiet || git commit -m "ci: update mlruns artifacts [skip ci]"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
