@@ -30,11 +30,11 @@ jobs:
 
       - name: Run MLflow Project
         run: |
-          mlflow run MLProject/ --env-manager=local
+          mlflow run . --env-manager=local
 
       - name: Upload Artifacts to GitHub
         run: |
-          cp -r MLProject/artifacts . 2>/dev/null || true
+          cp -r artifacts . 2>/dev/null || true
           find . -name "mlruns" -maxdepth 2 -exec cp -r {} ./mlruns_ci \; 2>/dev/null || true
 
           git config --local user.email "action@github.com"
