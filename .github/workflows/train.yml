@@ -32,16 +32,11 @@ jobs:
         run: |
           mlflow run MLProject/ --env-manager=local
 
-      - name: Debug - Find mlruns
-        run: |
-          find . -name "mlruns" -type d
-          find . -name "*.pkl" -type f
-
       - name: Upload Artifacts to GitHub
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add MLProject/mlruns/
+          git add mlruns/
           git diff --staged --quiet || git commit -m "ci: update mlruns artifacts [skip ci]"
           git push
         env:
