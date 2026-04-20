@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/mlruns/100478360811609647/845069cc55f8417aa4e381125e8fcc61/artifacts
+end_time: 1776701301582
+entry_point_name: ''
+experiment_id: '100478360811609647'
+lifecycle_stage: active
+run_id: 845069cc55f8417aa4e381125e8fcc61
+run_name: fearless-newt-378
+run_uuid: 845069cc55f8417aa4e381125e8fcc61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776701301576
+status: 3
+tags: []
+user_id: runner

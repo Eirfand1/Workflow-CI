@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/mlruns/0/d64430a1a3dc46b18b59ed18e6adbbce/artifacts
+end_time: 1776701301891
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d64430a1a3dc46b18b59ed18e6adbbce
+run_name: wistful-slug-516
+run_uuid: d64430a1a3dc46b18b59ed18e6adbbce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776701295213
+status: 3
+tags: []
+user_id: runner
